@@ -1,0 +1,11 @@
+﻿  Main.cpp
+  OpenGl.cpp
+OpenGl\OpenGl.cpp(74): warning C4101: 'e': unreferenced local variable
+OpenGl\OpenGl.cpp(423): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+OpenGl\OpenGl.cpp(426): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+OpenGl\OpenGl.cpp(430): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+  Generating Code...
+d:\documentos\github\debug dataanalisys\debug dataanalisys\opengl\opengl.cpp(51): warning C4700: uninitialized local variable 'argv' used
+  DataAnalisys.obj : /DEBUG:FASTLINK is not supported when managed code is present; restarting link with /DEBUG:FULL
+  Debug DataAnalisys.vcxproj -> D:\Documentos\GitHub\Debug DataAnalisys\Debug\Debug DataAnalisys.exe
+  Debug DataAnalisys.vcxproj -> D:\Documentos\GitHub\Debug DataAnalisys\Debug\Debug DataAnalisys.pdb (Partial PDB)

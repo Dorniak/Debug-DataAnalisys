@@ -3,6 +3,7 @@
 #include <math.h>
 #include "OpenGl.h"
 #include <timeApi.h>
+#include <stdlib.h>
 #include "Parametros.h"
 
 ref class DataAnalisys {

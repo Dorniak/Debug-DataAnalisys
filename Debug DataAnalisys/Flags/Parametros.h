@@ -75,9 +75,9 @@
 //Includes para las clases Controller Reader DataAnalisys y OpenGl
 using namespace std;
 using namespace System;
-using namespace System::Net;
+//using namespace System::Net;
 using namespace System::Text;
-using namespace System::Net::Sockets;
+//using namespace System::Net::Sockets;
 using namespace System::IO;
 using namespace System::Text;
 using namespace System::Threading;

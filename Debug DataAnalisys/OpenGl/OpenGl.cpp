@@ -71,7 +71,7 @@ OpenGl::OpenGl(cli::array<Thread^>^ Threads)
 	}
 	catch (Exception^ e)
 	{
-		System::Windows::Forms::MessageBox::Show(e->ToString());
+		//System::Windows::Forms::MessageBox::Show(e->ToString());
 	}
 }
 void OpenGl::modificarPuntos(List<Punto3D^>^ listEntradaPuntos)
