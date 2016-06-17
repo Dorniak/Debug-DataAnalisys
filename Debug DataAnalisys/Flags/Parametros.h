@@ -1,6 +1,6 @@
 #pragma once
 //Posicion parametros array Flags
-#define SIZE_ARRAY_FLAGS 6
+#define SIZE_ARRAY_FLAGS 8
 
 #define FLAG_TRATAMIENTO 0
 #define FLAG_LOG 1
@@ -8,11 +8,13 @@
 #define FLAG_PAUSA 3
 #define FLAG_ANALISYS 4
 #define FLAG_OPENGL 5
+#define FLAG_LOCK 6
+#define FLAG_ANALIZAR 7
 
 
 //Numero de parametros de los arrays
-#define SIZE_ARRAY_READER 13
-#define SIZE_ARRAY_ANALISYS 7
+#define SIZE_ARRAY_READER 14
+#define SIZE_ARRAY_ANALISYS 9
 //Posicion parametros array Reader
 #define PATH_LOG 0
 #define IP 1
@@ -27,6 +29,7 @@
 #define INFORME 10
 #define FRECUENCY_TIME 11
 #define PROCESS_TIME 12
+#define Hz 13
 
 
 #define NUMBER_OF_BLOCKS 12
@@ -34,9 +37,9 @@
 
 
 //Analisys puntos
-#define VERTICAL_TOLERANCE 10
-#define DIAGONAL_TOLERANCE 10
-#define HORIZONTAL_TOLERANCE 10
+#define VERTICAL_TOLERANCE 0.00001
+#define DIAGONAL_TOLERANCE 0.00001
+#define HORIZONTAL_TOLERANCE 0.00001
 
 
 //Posicion parametros array DataAnalisys
@@ -46,7 +49,9 @@
 #define CAR_VELOCITY 3
 #define INFORME_ANALISYS 4
 #define TOLERANCE 5
-#define INFORMEA 6
+#define TOLERANCE 6
+#define TOLERANCE 7
+#define INFORMEA 8
 
 //Constantes DataAnalisys
 #define NUMERO_FILAS 16 //Coincide con el numero de canales

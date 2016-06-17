@@ -211,8 +211,8 @@ double Punto3D::getModule()
 
 String^ Punto3D::visualize()
 {
-	//return Azimuth + "," + x + "," + y + "," + z + "," + Distance;
-	return z.ToString();
+	return Azimuth + "," + x + "," + y + "," + z + "," + Distance;
+	//return z.ToString();
 }
 
 /// <summary>
@@ -255,37 +255,37 @@ double Punto3D::distanceToPoint(Punto3D^ p)
 
 Punto3D^ Punto3D::operator+(Punto3D^ v)
 {
-	Punto3D^ result ;
+	Punto3D^ result = gcnew Punto3D();
 
 	result->x = x + v->x;
 	result->y = y + v->y;
 	result->z = z + v->z;
-
+	result->valido = valido;
 	return result;
 }
 Punto3D^ Punto3D::operator*(double d)
 {
-	Punto3D^ result ;
+	Punto3D^ result = gcnew Punto3D();
 
 	result->x = x * d;
 	result->y = y * d;
 	result->z = z * d;
-
+	result->valido = valido;
 	return result;
 }
 Punto3D^ Punto3D::operator-(Punto3D^ v)
 {
-	Punto3D^ result;
+	Punto3D^ result = gcnew Punto3D();
 
 	result->x = x - v->x;
 	result->y = y - v->y;
 	result->z = z - v->z;
-
+	result->valido = valido;
 	return result;
 }
 Punto3D^ Punto3D::operator=(Punto3D^ v)
 {
-	Punto3D^ result;
+	Punto3D^ result = gcnew Punto3D();
 
 	result->x = v->x;
 	result->y = v->y;
@@ -293,7 +293,7 @@ Punto3D^ Punto3D::operator=(Punto3D^ v)
 	result->Angle = v->Angle;
 	result->Azimuth = v->Azimuth;
 	result->Distance = v->Distance;
-
+	result->valido = valido;
 	return result;
 }
 #pragma endregion

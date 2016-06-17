@@ -12,11 +12,17 @@ public:
 	DataAnalisys(List<Punto3D^>^ puntosController, List<Obstaculo^>^ ObstaculosController, cli::array<Object^>^ ParamAnalisys, List<int>^ Conclusiones, cli::array<bool>^ Flags, cli::array<Thread^>^ Threads, OpenGl^ Dibujador);
 	//Funcion de thread
 	void AnalisysThread();
+	void AnalisysThread2();
 	void Esperar();
+	void Esperar2();
 	//Funcion para abortar el thread
 	void Kill();
 
 private:
+
+	int numCercanos;
+	int localizador;
+
 	void Informar(String^ Entrada);
 	String^* Informe;
 	OpenGl^ Dibujador;
@@ -50,12 +56,12 @@ private:
 	//numero de barridos que es variable por la configuracion del laser
 	int NUMERO_COLUMNAS;
 	//Lista de obstaculos obtenidos en el analisys de la vuelta actual
-	List<Obstaculo^>^ Obstaculos = gcnew List<Obstaculo^>();
+	List<Obstaculo^>^ Obstaculos ;
 	//Lista de obstaculos de la vuelta anterior
-	List<Obstaculo^>^ ObstaculosvAnt = gcnew List<Obstaculo^>();
+	List<Obstaculo^>^ ObstaculosvAnt ;
 	//Lista usada para ordenacion
-	cli::array<bool>^ Cercanos = gcnew cli::array<bool>(4);
-	cli::array<Punto3D^>^ PCercanos = gcnew cli::array<Punto3D^>(4);
+	cli::array<bool>^ Cercanos ;
+	cli::array<Punto3D^>^ PCercanos ;
 	//Funcion encargada de agrupar puntos en obstaculos
 	void Segmentacion(List<Punto3D^>^ matrix, double apertura);
 
@@ -84,4 +90,9 @@ private:
 	//Objeto thread del analisys
 	Thread^ thread_analysis;
 	void MoverObstaculo(int Obst1, int Obst2);
+
+
+
+
+	int cambios;
 };

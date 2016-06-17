@@ -93,7 +93,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies />
-      <SubSystem>Console</SubSystem>
+      <SubSystem>Windows</SubSystem>
       <EntryPointSymbol>Main</EntryPointSymbol>
     </Link>
   </ItemDefinitionGroup>
@@ -127,20 +127,38 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="DataAnalisys\DataAnalisys.cpp" />
+    <ClCompile Include="Interfaz.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Obstaculo\Obstaculo.cpp" />
     <ClCompile Include="OpenGl\OpenGl.cpp" />
     <ClCompile Include="Punto3D\Punto3D.cpp" />
+    <ClCompile Include="Reader\reader.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DataAnalisys\DataAnalisys.h" />
     <ClInclude Include="Flags\Parametros.h" />
+    <ClInclude Include="Interfaz.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="Obstaculo\Obstaculo.h" />
     <ClInclude Include="OpenGl\OpenGl.h" />
     <ClInclude Include="Punto3D\Punto3D.h" />
+    <ClInclude Include="Reader\reader.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Interfaz.resx">
+      <DependentUpon>Interfaz.h</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

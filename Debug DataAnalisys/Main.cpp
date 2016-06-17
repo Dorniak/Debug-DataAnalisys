@@ -1,11 +1,14 @@
 #include <stdio.h>
 #include <iostream>
 #include "DataAnalisys.h"
+#include "Reader\reader.h"
 #include "OpenGl.h"
+#include <locale.h>
 using namespace std;
 using namespace System;
-void Main() {
+void Mairtsdhgn() {
 #pragma region Parametros
+	setlocale(LC_NUMERIC, "es_ES");
 	/*-------------------------------------------------------------------------------------------*/
 	/*---------------------------Parametros necesarios-------------------------------------------*/
 	/*-------------------------------------------------------------------------------------------*/
@@ -28,6 +31,7 @@ void Main() {
 	String^ informe;
 	String ^ entrada;
 	String^ path;
+	StreamReader^ sr;
 	/*-------------------------------------------------------------------------------------------*/
 	/*-----------------------------------Fin parametros------------------------------------------*/
 	/*-------------------------------------------------------------------------------------------*/
@@ -57,8 +61,7 @@ void Main() {
 	/*---------------------------------------Fin de ajuste---------------------------------------*/
 	/*-------------------------------------------------------------------------------------------*/
 #pragma endregion
-	entrada = Console::ReadLine();
-	Console::WriteLine(entrada);
+	
 #pragma region Lectura
 	/*-------------------------------------------------------------------------------------------*/
 	/*----------------------------------Lectura de fichero-------------------------------------*/
@@ -72,43 +75,16 @@ void Main() {
 #pragma endregion
 	OpenGl^ Dibujador = gcnew OpenGl(Threads);
 	DataAnalisys^ Analisys = gcnew DataAnalisys(Puntos, Obstaculos, ArrayDataAnalisys, Conclusiones, Flags, Threads, Dibujador);
-	path = Console::ReadLine();
+	DataReader^ f;
+	//path = Console::ReadLine();
 	int frame = 0;
-	while (true) {
-		entrada = Console::ReadLine();
-		/*-------------------------------------------------------------------------------------------*/
-		/*----------------------------------Lectura de fichero---------------------------------------*/
-		/*-------------------------------------------------------------------------------------------*/
-		String^ interno = path+"\\Frame_"+frame;
-		if (File::Exists(interno)) {
-			StreamReader^ sr = File::OpenText(interno);
-			while ((entrada = sr->ReadLine()) != nullptr) {
-				Punto3D^ a;
-				Puntos->Add(gcnew Punto3D(Convert::ToDouble(entrada->Split(',')[2]), Convert::ToDouble(entrada->Split(',')[3]), Convert::ToDouble(entrada->Split(',')[4])));
-			}
-			sr->Close();
-
-			/*-------------------------------------------------------------------------------------------*/
-			/*--------------------------------------Fin de lectura---------------------------------------*/
-			/*-------------------------------------------------------------------------------------------*/
-
-
-			/*-------------------------------------------------------------------------------------------*/
-			/*--------------------------------------Tratamiento------------------------------------------*/
-			/*-------------------------------------------------------------------------------------------*/
-			Flags[FLAG_TRATAMIENTO] = false;
-			Flags[FLAG_PAUSA] = false;
-
-
-			/*-------------------------------------------------------------------------------------------*/
-			/*--------------------------------------Fin tratamiento--------------------------------------*/
-			/*-------------------------------------------------------------------------------------------*/
-		}
-		else {
-			break;
-		}
-	}
+	String^ interno = "E:\\plot matlab\\log.log";
+	Console::WriteLine(interno);
+	
 
 #pragma region Tratamiento
 #pragma endregion
+}
+void Esperar() {
+
 }

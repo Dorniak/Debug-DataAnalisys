@@ -37,7 +37,7 @@ char *window_title = "Sample OpenGL FreeGlut App";
 
 void OpenGl::Informar(String ^ Entrada)
 {
-	Informe += "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t[" + DateTime::Now.ToString("HH - mm - ss") + "]" + Entrada + "\r\n";
+	//Informe += "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t[" + DateTime::Now.ToString("HH - mm - ss") + "]" + Entrada + "\r\n";
 }
 
 void OpenGl::threadconstructor()
@@ -61,7 +61,7 @@ OpenGl::OpenGl(cli::array<Thread^>^ Threads)
 {
 	try
 	{
-		this->Informe = Informe;
+		Informe = gcnew String("");
 		this->Threads = Threads;
 		Informar("CONSTRUCTOR OPENGL");
 		if (!ThreadDIO)
@@ -76,7 +76,7 @@ OpenGl::OpenGl(cli::array<Thread^>^ Threads)
 }
 void OpenGl::modificarPuntos(List<Punto3D^>^ listEntradaPuntos)
 {
-	Informar("MODIFICAR PUNTOS"+ listEntradaPuntos->Count);
+	Informar("MODIFICAR PUNTOS" + listEntradaPuntos->Count);
 	listo = false;
 	if (listEntradaPuntos->Count < puntos->Count) {
 		limpiarListas(listEntradaPuntos->Count);
@@ -363,7 +363,7 @@ void timerFunc(int time) {
 		glutPostRedisplay();
 		glFlush();
 	}
-	glutTimerFunc(50, timerFunc, 0);
+	glutTimerFunc(100, timerFunc, 0);
 }
 //-------------------------------------------------------------------------
 //  This function sets the window x and y coordinates
