@@ -117,9 +117,15 @@ void DataReader::Read()
 			entrada = sr->ReadLine();
 			if (entrada != nullptr && entrada->Length>5) {
 				if (Convert::ToInt32(entrada->Split(',')[0]) == frame) {
-					//Puntos->Add(gcnew Punto3D(Convert::ToDouble(entrada->Split(',')[2]), Convert::ToDouble(entrada->Split(',')[3]), Convert::ToDouble(entrada->Split(',')[4])));
-					Puntos->Add(gcnew Punto3D(Convert::ToDouble(entrada->Split(',')[5]), Convert::ToDouble(entrada->Split(',')[6]), Convert::ToDouble(entrada->Split(',')[1]), Convert::ToDouble(entrada->Split(',')[7])));
-					Puntos[Puntos->Count - 1]->CalculateCoordinates(0,0,0,0,0,0);
+					if(Convert::ToDouble(entrada->Split(',')[5])<=0){
+						Puntos->Add(gcnew Punto3D());
+						Puntos[Puntos->Count - 1]->CalculateCoordinates(0, 0, 0, 0, 0, 0);
+					}
+					else {
+						//Puntos->Add(gcnew Punto3D(Convert::ToDouble(entrada->Split(',')[2]), Convert::ToDouble(entrada->Split(',')[3]), Convert::ToDouble(entrada->Split(',')[4])));
+						Puntos->Add(gcnew Punto3D(Convert::ToDouble(entrada->Split(',')[5]), Convert::ToDouble(entrada->Split(',')[6]), Convert::ToDouble(entrada->Split(',')[1]), Convert::ToDouble(entrada->Split(',')[7]), Convert::ToDouble(entrada->Split(',')[0])));
+						Puntos[Puntos->Count - 1]->CalculateCoordinates(0, 0, 0, 0, 0, 0);
+					}
 				}
 				else break;
 			}

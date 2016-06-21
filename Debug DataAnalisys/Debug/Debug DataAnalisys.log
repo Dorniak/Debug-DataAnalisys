@@ -1,52 +1,10 @@
 ﻿  DataAnalisys.cpp
-D:\Documentos\GitHub\Debug DataAnalisys\Debug DataAnalisys\Flags\Parametros.h(52): warning C4005: 'TOLERANCE': macro redefinition
-  D:\Documentos\GitHub\Debug DataAnalisys\Debug DataAnalisys\Flags\Parametros.h(51): note: see previous definition of 'TOLERANCE'
-D:\Documentos\GitHub\Debug DataAnalisys\Debug DataAnalisys\Flags\Parametros.h(53): warning C4005: 'TOLERANCE': macro redefinition
-  D:\Documentos\GitHub\Debug DataAnalisys\Debug DataAnalisys\Flags\Parametros.h(52): note: see previous definition of 'TOLERANCE'
-DataAnalisys\DataAnalisys.cpp(95): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-DataAnalisys\DataAnalisys.cpp(96): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-DataAnalisys\DataAnalisys.cpp(100): warning C4101: 'e': unreferenced local variable
-DataAnalisys\DataAnalisys.cpp(181): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-DataAnalisys\DataAnalisys.cpp(182): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-DataAnalisys\DataAnalisys.cpp(253): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-DataAnalisys\DataAnalisys.cpp(339): warning C4101: 'Obs': unreferenced local variable
-DataAnalisys\DataAnalisys.cpp(422): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-  Interfaz.cpp
-D:\Documentos\GitHub\Debug DataAnalisys\Debug DataAnalisys\Flags\Parametros.h(52): warning C4005: 'TOLERANCE': macro redefinition
-  D:\Documentos\GitHub\Debug DataAnalisys\Debug DataAnalisys\Flags\Parametros.h(51): note: see previous definition of 'TOLERANCE'
-D:\Documentos\GitHub\Debug DataAnalisys\Debug DataAnalisys\Flags\Parametros.h(53): warning C4005: 'TOLERANCE': macro redefinition
-  D:\Documentos\GitHub\Debug DataAnalisys\Debug DataAnalisys\Flags\Parametros.h(52): note: see previous definition of 'TOLERANCE'
-  Main.cpp
-D:\Documentos\GitHub\Debug DataAnalisys\Debug DataAnalisys\Flags\Parametros.h(52): warning C4005: 'TOLERANCE': macro redefinition
-  D:\Documentos\GitHub\Debug DataAnalisys\Debug DataAnalisys\Flags\Parametros.h(51): note: see previous definition of 'TOLERANCE'
-D:\Documentos\GitHub\Debug DataAnalisys\Debug DataAnalisys\Flags\Parametros.h(53): warning C4005: 'TOLERANCE': macro redefinition
-  D:\Documentos\GitHub\Debug DataAnalisys\Debug DataAnalisys\Flags\Parametros.h(52): note: see previous definition of 'TOLERANCE'
-Main.cpp(34): warning C4101: 'sr': unreferenced local variable
-Main.cpp(78): warning C4101: 'f': unreferenced local variable
-Main.cpp(32): warning C4101: 'entrada': unreferenced local variable
-Main.cpp(33): warning C4101: 'path': unreferenced local variable
-  Obstaculo.cpp
-  OpenGl.cpp
-D:\Documentos\GitHub\Debug DataAnalisys\Debug DataAnalisys\Flags\Parametros.h(52): warning C4005: 'TOLERANCE': macro redefinition
-  D:\Documentos\GitHub\Debug DataAnalisys\Debug DataAnalisys\Flags\Parametros.h(51): note: see previous definition of 'TOLERANCE'
-D:\Documentos\GitHub\Debug DataAnalisys\Debug DataAnalisys\Flags\Parametros.h(53): warning C4005: 'TOLERANCE': macro redefinition
-  D:\Documentos\GitHub\Debug DataAnalisys\Debug DataAnalisys\Flags\Parametros.h(52): note: see previous definition of 'TOLERANCE'
-OpenGl\OpenGl.cpp(72): warning C4101: 'e': unreferenced local variable
-OpenGl\OpenGl.cpp(421): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-OpenGl\OpenGl.cpp(424): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-OpenGl\OpenGl.cpp(428): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-  Punto3D.cpp
-  reader.cpp
-D:\Documentos\GitHub\Debug DataAnalisys\Debug DataAnalisys\Flags\Parametros.h(52): warning C4005: 'TOLERANCE': macro redefinition
-  D:\Documentos\GitHub\Debug DataAnalisys\Debug DataAnalisys\Flags\Parametros.h(51): note: see previous definition of 'TOLERANCE'
-D:\Documentos\GitHub\Debug DataAnalisys\Debug DataAnalisys\Flags\Parametros.h(53): warning C4005: 'TOLERANCE': macro redefinition
-  D:\Documentos\GitHub\Debug DataAnalisys\Debug DataAnalisys\Flags\Parametros.h(52): note: see previous definition of 'TOLERANCE'
-Reader\reader.cpp(21): warning C4101: 'e': unreferenced local variable
-Reader\reader.cpp(71): warning C4101: 'a': unreferenced local variable
-Reader\reader.cpp(80): warning C4101: 'a': unreferenced local variable
-  Generating Code...
-d:\documentos\github\debug dataanalisys\debug dataanalisys\opengl\opengl.cpp(50): warning C4700: uninitialized local variable 'argv' used
-  .NETFramework,Version=v4.5.2.AssemblyAttributes.cpp
+DataAnalisys\DataAnalisys.cpp(93): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+DataAnalisys\DataAnalisys.cpp(94): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+DataAnalisys\DataAnalisys.cpp(98): warning C4101: 'e': unreferenced local variable
+DataAnalisys\DataAnalisys.cpp(172): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+DataAnalisys\DataAnalisys.cpp(173): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+DataAnalisys\DataAnalisys.cpp(421): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
   DataAnalisys.obj : /DEBUG:FASTLINK is not supported when managed code is present; restarting link with /DEBUG:FULL
   Debug DataAnalisys.vcxproj -> D:\Documentos\GitHub\Debug DataAnalisys\Debug\Debug DataAnalisys.exe
   Debug DataAnalisys.vcxproj -> D:\Documentos\GitHub\Debug DataAnalisys\Debug\Debug DataAnalisys.pdb (Partial PDB)

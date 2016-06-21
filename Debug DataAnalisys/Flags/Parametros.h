@@ -14,7 +14,7 @@
 
 //Numero de parametros de los arrays
 #define SIZE_ARRAY_READER 14
-#define SIZE_ARRAY_ANALISYS 9
+#define SIZE_ARRAY_ANALISYS 6
 //Posicion parametros array Reader
 #define PATH_LOG 0
 #define IP 1
@@ -37,9 +37,9 @@
 
 
 //Analisys puntos
-#define VERTICAL_TOLERANCE 0.00001
-#define DIAGONAL_TOLERANCE 0.00001
-#define HORIZONTAL_TOLERANCE 0.00001
+#define VERTICAL_TOLERANCE 0.01
+#define DIAGONAL_TOLERANCE 0.01
+#define HORIZONTAL_TOLERANCE 0.01
 
 
 //Posicion parametros array DataAnalisys
@@ -48,10 +48,7 @@
 #define OPENING 2
 #define CAR_VELOCITY 3
 #define INFORME_ANALISYS 4
-#define TOLERANCE 5
-#define TOLERANCE 6
-#define TOLERANCE 7
-#define INFORMEA 8
+#define INFORMEA 5
 
 //Constantes DataAnalisys
 #define NUMERO_FILAS 16 //Coincide con el numero de canales
@@ -64,19 +61,25 @@
 #define NUM_OBSTACULOS 10
 
 //Constantes GPS
-#define SIZE_ARRAY_GPS 6
+#define SIZE_ARRAY_GPS 8
 #define TIPO_TRAMA 0
 #define TRAMA 1
 #define START 2
 #define COM 3
 #define QUALITY 4
 #define SATELITES 5
+#define RATE 6
+#define ESTADO 7
 //THREADS
 #define NUMERO_THREADS 4 
 #define THREAD_READER 0
 #define THREAD_ANALISIS 1
 #define THREAD_OPENGL 2
 #define THREAD_GPS 3 
+
+//Constantes Logger
+#define SIZE_ARRAY_LOGGER 1
+#define BUFFER 0
 //Includes para las clases Controller Reader DataAnalisys y OpenGl
 using namespace std;
 using namespace System;

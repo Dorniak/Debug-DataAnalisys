@@ -54,7 +54,6 @@ void Mairtsdhgn() {
 	ArrayDataAnalisys[OPENING] = 10;
 	ArrayDataAnalisys[CAR_VELOCITY] = 10;
 	ArrayDataAnalisys[INFORME_ANALISYS] = informe;
-	ArrayDataAnalisys[TOLERANCE] = 10;
 	ArrayDataAnalisys[INFORMEA] = informe;
 #pragma endregion
 	/*-------------------------------------------------------------------------------------------*/

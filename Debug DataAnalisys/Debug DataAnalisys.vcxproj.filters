@@ -24,9 +24,6 @@
     <ClCompile Include="OpenGl\OpenGl.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Punto3D\Punto3D.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -34,6 +31,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Interfaz.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Punto3D\Punto3D.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -50,13 +50,13 @@
     <ClInclude Include="OpenGl\OpenGl.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Punto3D\Punto3D.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Reader\reader.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Interfaz.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Punto3D\Punto3D.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

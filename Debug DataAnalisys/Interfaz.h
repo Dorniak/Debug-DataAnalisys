@@ -64,7 +64,6 @@ namespace DebugDataAnalisys {
 			ArrayDataAnalisys[OPENING] = 10;
 			ArrayDataAnalisys[CAR_VELOCITY] = 10;
 			ArrayDataAnalisys[INFORME_ANALISYS] = "";
-			ArrayDataAnalisys[TOLERANCE] = 10;
 #pragma endregion
 #pragma region ArrayDataReader
 			ArrayDataReader[INFORME] = "";

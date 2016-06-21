@@ -22,11 +22,12 @@ private:
 
 	int numCercanos;
 	int localizador;
+	int Obstmenor;
+	bool iguales;
 
 	void Informar(String^ Entrada);
 	String^* Informe;
 	OpenGl^ Dibujador;
-	double tolerancia;
 	//Funcion que copia los obstaculos de la vuelta actual a la anterior y al control
 	void copiarObstaculos();
 	//Puntero al array de thread
@@ -65,6 +66,8 @@ private:
 	//Funcion encargada de agrupar puntos en obstaculos
 	void Segmentacion(List<Punto3D^>^ matrix, double apertura);
 
+	void ResetParametros();
+
 	void prepararObstaculos();
 	//Funcion encargada de eliminar obstaculos no validos
 	void EliminarObstaculos();
@@ -90,9 +93,5 @@ private:
 	//Objeto thread del analisys
 	Thread^ thread_analysis;
 	void MoverObstaculo(int Obst1, int Obst2);
-
-
-
-
 	int cambios;
 };

@@ -44,7 +44,6 @@ void DataAnalisys::AnalisysThread()
 	resolutionV = Convert::ToDouble(parametros[VERTICAL_RESOLUTION]);//Resolucion
 	VCOCHE = Convert::ToDouble(parametros[CAR_VELOCITY]);//Vcoche
 	apertura = Convert::ToDouble(parametros[OPENING]);//Apertura
-	tolerancia = Convert::ToDouble(parametros[TOLERANCE]);
 	
 	while (Flags[FLAG_ANALISYS] && !Flags[FLAG_WARNING] && !Flags[FLAG_PAUSA])
 	{
@@ -58,7 +57,6 @@ void DataAnalisys::AnalisysThread()
 				resolutionV = Convert::ToDouble(parametros[VERTICAL_RESOLUTION]);//Resolucion
 				VCOCHE = Convert::ToDouble(parametros[CAR_VELOCITY]);//Vcoche
 				apertura = Convert::ToDouble(parametros[OPENING]);//Apertura
-				tolerancia = Convert::ToDouble(parametros[TOLERANCE]);
 				NUMERO_COLUMNAS = matriz->Count / NUMERO_FILAS;
 				//Trabajo
 
@@ -111,12 +109,6 @@ void DataAnalisys::AnalisysThread()
 void DataAnalisys::AnalisysThread2()
 {
 	Informar("Iniciando Thread Analisis");
-	resolutionH = Convert::ToDouble(parametros[HORIZONTAL_RESOLUTION]);//Resolucion
-	resolutionV = Convert::ToDouble(parametros[VERTICAL_RESOLUTION]);//Resolucion
-	VCOCHE = Convert::ToDouble(parametros[CAR_VELOCITY]);//Vcoche
-	apertura = Convert::ToDouble(parametros[OPENING]);//Apertura
-	tolerancia = Convert::ToDouble(parametros[TOLERANCE]);
-
 	//while (Flags[FLAG_ANALISYS] && !Flags[FLAG_WARNING] && !Flags[FLAG_PAUSA])
 	//{
 	while (Flags[FLAG_ANALIZAR]) {
@@ -130,7 +122,6 @@ void DataAnalisys::AnalisysThread2()
 				resolutionV = Convert::ToDouble(parametros[VERTICAL_RESOLUTION]);//Resolucion
 				VCOCHE = Convert::ToDouble(parametros[CAR_VELOCITY]);//Vcoche
 				apertura = Convert::ToDouble(parametros[OPENING]);//Apertura
-				tolerancia = Convert::ToDouble(parametros[TOLERANCE]);
 				NUMERO_COLUMNAS = matriz->Count / NUMERO_FILAS;
 				//Trabajo
 
@@ -225,12 +216,12 @@ void DataAnalisys::Kill()
 
 void DataAnalisys::Informar(String ^ Entrada)
 {
-
 	parametros[INFORME_ANALISYS] += "											[" + DateTime::Now.ToString("HH - mm - ss") + "]" + Entrada + "\r\n";
 }
 
 void DataAnalisys::copiarObstaculos()
 {
+	
 	//Controller de collision
 	if (Flags[FLAG_TRATAMIENTO]) {
 		Flags[FLAG_WARNING] = true;
@@ -241,16 +232,16 @@ void DataAnalisys::copiarObstaculos()
 
 	ObstaculosvAnt->Clear();
 	ObstaculosvAnt->AddRange(Obstaculos);
+	Informar("Numero de obstaculos a copiar: " + ObstaculosvAnt->Count);
 	if (Flags[FLAG_OPENGL]) {
 		Informar("Obstaculos->OpenGl");
 		Dibujador->modificarObstaculos(ObstaculosvAnt);
 	}
-	
+	Obstaculos->Clear();
 }
 
 void DataAnalisys::Segmentacion(List<Punto3D^>^ matrix, double apertura)
 {
-	int aprr = (apertura / 2) / resolutionH;
 	//int inicio = (NUMERO_COLUMNAS / 2); //- aprr;
 	//int final = (NUMERO_COLUMNAS / 2); //+ aprr;
 	int inicio = 0;
@@ -262,9 +253,11 @@ void DataAnalisys::Segmentacion(List<Punto3D^>^ matrix, double apertura)
 	{
 		for (int i = inicio; i < final; i++)//Recorrido de columnas
 		{
+			
 			//Se comprubea si el punto a tratar Existe
-			if (matrix[convaPos(i, j)]->valido)
+			if (matrix[convaPos(i, j)]->valido && matrix[convaPos(i, j)]->getAzimuth()>(180 - apertura) && matrix[convaPos(i, j)]->getAzimuth() < (180 + apertura))
 			{
+				ResetParametros();
 				//En caso de que sea el primer punto se asigna directamente al obstaculo 0
 				if (i == 0 && j == inicio)
 				{
@@ -335,9 +328,6 @@ void DataAnalisys::Segmentacion(List<Punto3D^>^ matrix, double apertura)
 						Obstaculos[matrix[convaPos(i, j)]->getObstacle()]->components->Add(matrix[convaPos(i, j)]);
 					}
 					else {
-						bool iguales = true;
-						int Obs;
-						int Obstmenor = -1;
 						for (int recorrido2 = 0; recorrido2 < 4; recorrido2++)
 						{
 							if (Cercanos[recorrido2]) {
@@ -374,7 +364,16 @@ void DataAnalisys::Segmentacion(List<Punto3D^>^ matrix, double apertura)
 		}
 	}
 }
-
+void DataAnalisys::ResetParametros() {
+	Obstmenor = -1;
+	for (int i = 0; i < 4; i++)
+	{
+		Cercanos[i] = false;
+		PCercanos[i] = nullptr;
+	}
+	
+	iguales = true;
+}
 void DataAnalisys::prepararObstaculos()
 {
 	for (int i = 0; i < Obstaculos->Count; i++)
