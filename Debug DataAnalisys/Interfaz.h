@@ -59,9 +59,9 @@ namespace DebugDataAnalisys {
 			Flags[FLAG_ANALIZAR] = false;
 #pragma endregion
 #pragma region ArrayDataAnalisys
-			ArrayDataAnalisys[HORIZONTAL_RESOLUTION] = (2 * 20 * 0.000002304 * 180);
+			ArrayDataAnalisys[HORIZONTAL_RESOLUTION] = ((2 * 20 * 0.000002304 * 180) * 16) + (2 * 20 * 0.00001843 * 180);
 			ArrayDataAnalisys[VERTICAL_RESOLUTION] = 2;
-			ArrayDataAnalisys[OPENING] = 10;
+			ArrayDataAnalisys[OPENING] = 180;
 			ArrayDataAnalisys[CAR_VELOCITY] = 10;
 			ArrayDataAnalisys[INFORME_ANALISYS] = "";
 #pragma endregion

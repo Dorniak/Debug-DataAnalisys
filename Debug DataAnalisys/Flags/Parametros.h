@@ -37,9 +37,9 @@
 
 
 //Analisys puntos
-#define VERTICAL_TOLERANCE 0.01
-#define DIAGONAL_TOLERANCE 0.01
-#define HORIZONTAL_TOLERANCE 0.01
+#define VERTICAL_TOLERANCE 1500
+#define DIAGONAL_TOLERANCE 500
+#define HORIZONTAL_TOLERANCE 1500
 
 
 //Posicion parametros array DataAnalisys
@@ -58,7 +58,7 @@
 #define PI Math::PI
 
 //Constantes OpenGl
-#define NUM_OBSTACULOS 10
+#define NUM_OBSTACULOS 250
 
 //Constantes GPS
 #define SIZE_ARRAY_GPS 8
