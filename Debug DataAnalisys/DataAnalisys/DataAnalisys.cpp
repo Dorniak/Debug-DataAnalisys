@@ -1,9 +1,4 @@
 #include "DataAnalisys.h"
-//DataAnalisys::DataAnalisys()
-//{
-//	timeBeginPeriod(1);
-//	indice = -1;
-//	menor = -1;
 DataAnalisys::DataAnalisys(List<Punto3D^>^ puntosController, List<Obstaculo^>^ ObstaculosController, cli::array<Object^>^ ParamAnalisys, List<int>^ Conclusiones, cli::array<bool>^ Flags, cli::array<Thread^>^ Threads, OpenGl^ Dibujador)
 {
 	try {
@@ -37,74 +32,6 @@ DataAnalisys::DataAnalisys(List<Punto3D^>^ puntosController, List<Obstaculo^>^ O
 //consigna volante:: puntero para devolucion de parametro de volante
 //apertura::Angulo de interes de lectura en grados
 //List<Punto3D^>^ matriz, double resolucionAngular,double Vcoche, double &consigna_velocidad, double &consigna_volante, double apertura
-void DataAnalisys::AnalisysThread()
-{
-	Informar("Iniciando Thread Analisis");
-	resolutionH = Convert::ToDouble(parametros[HORIZONTAL_RESOLUTION]);//Resolucion
-	resolutionV = Convert::ToDouble(parametros[VERTICAL_RESOLUTION]);//Resolucion
-	VCOCHE = Convert::ToDouble(parametros[CAR_VELOCITY]);//Vcoche
-	apertura = Convert::ToDouble(parametros[OPENING]);//Apertura
-
-	while (Flags[FLAG_ANALISYS] && !Flags[FLAG_WARNING] && !Flags[FLAG_PAUSA])
-	{
-		Informar("Interior del while");
-		try
-		{
-			if (!Flags[FLAG_TRATAMIENTO]) {
-				Informar("Tratamiento");
-				//matriz = Controllerador->Puntos;  La matriz es siempre igual a la matriz de puntos
-				resolutionH = Convert::ToDouble(parametros[HORIZONTAL_RESOLUTION]);//Resolucion
-				resolutionV = Convert::ToDouble(parametros[VERTICAL_RESOLUTION]);//Resolucion
-				VCOCHE = Convert::ToDouble(parametros[CAR_VELOCITY]);//Vcoche
-				apertura = Convert::ToDouble(parametros[OPENING]);//Apertura
-				NUMERO_COLUMNAS = matriz->Count / NUMERO_FILAS;
-				//Trabajo
-
-				if (VCOCHE > 5) {
-					Informar("Velocidad minima tratamiento");
-					if (!comprobarBloqueo(matriz))
-					{
-						Informar("No hay bloqueo");
-						Informar("Segmentacion");
-						Segmentacion(matriz, apertura);
-						Informar("Fin Segmentacion");
-						//TODO::Identificar tipo de obstaculo
-						Informar("Eliminar obstaculos no validos");
-						EliminarObstaculos();
-						Informar("Preparar obstaculos");
-						prepararObstaculos();
-						Informar("Relacionar obstaculos");
-						RelacionarObstaculos();
-						//Copiar el vector de obstaculos obtenido en Controller y comprueba colisiones
-						Informar("Copiar Obstaculos");
-						copiarObstaculos();
-					}
-					else {
-						Informar("Bloqueo");
-						consigna_velocidad = 0.0;
-					}
-				}
-				else {
-					Informar("Error Velocidad minima tratamiento");
-				}
-
-				//Fin tratamiento
-				//Actualizar consignas en el vector de conclusiones
-				Conclusiones[0] = consigna_velocidad;
-				Conclusiones[1] = consigna_volante;
-			}
-			Sleep(200);
-		}
-		catch (Exception^ e)
-		{
-			Informar("Excepcion");
-			Flags[FLAG_WARNING] = true;
-		}
-	}
-	//En caso de que se desactive y se reactive despues hay que limpiar los objetos
-	ObstaculosvAnt->Clear();
-	Esperar();
-}
 
 void DataAnalisys::AnalisysThread2()
 {
@@ -469,7 +396,6 @@ bool DataAnalisys::comprobarBloqueo(List<Punto3D^>^ matriz)
 
 bool DataAnalisys::puntosCercanosH(Punto3D^ p1, Punto3D^ p2)
 {
-	double pruebe = tan(resolutionH * PI / 180);
 	double tolerancia = p1->getDistance() * tan(resolutionH * PI / 180);
 	tolerancia = tolerancia * ((100 + HORIZONTAL_TOLERANCE) / 100);
 	return(tolerancia > p1->distanceToPoint(p2));
@@ -477,11 +403,11 @@ bool DataAnalisys::puntosCercanosH(Punto3D^ p1, Punto3D^ p2)
 
 bool DataAnalisys::puntosCercanosV(Punto3D^ p1, Punto3D^ p2)
 {
-	/*double toleranciaV = p1->getDistance() * tan(resolutionV  * PI / 180);
+	double toleranciaV = p1->getDistance() * tan(resolutionV  * PI / 180);
 	double toleranciaH = p1->getDistance() * tan(((resolutionH - (2 * 20 * 0.00001843 * 180)) / 16)  * PI / 180);
 	Punto3D ^ a = gcnew Punto3D(toleranciaH, toleranciaV, 0);
-	double tolerancia = a->getModule();*/
-	double tolerancia = p1->getDistance() * tan(resolutionV  * PI / 180);
+	double tolerancia = a->getModule();
+	//double tolerancia = p1->getDistance() * tan(resolutionV  * PI / 180);
 	tolerancia = tolerancia * ((100 + VERTICAL_TOLERANCE) / 100);
 	return(tolerancia > p1->distanceToPoint(p2));
 }
@@ -496,24 +422,26 @@ bool DataAnalisys::puntosCercanosD(Punto3D^ p1, Punto3D^ p2)
 	return(tolerancia > p1->distanceToPoint(p2));
 }
 
-int DataAnalisys::convaPos(int columna, int fila) {
-
+int DataAnalisys::convaPos(int columna, int fila) 
+{
 	switch (fila)
 	{
-	case 1: fila = 2;
-	case 2: fila = 4;
-	case 3: fila = 6;
-	case 4: fila = 8;
-	case 5: fila = 10;
-	case 6: fila = 12;
-	case 7: fila = 14;
-	case 8: fila = 1;
-	case 9: fila = 3;
-	case 10: fila = 5;
-	case 11: fila = 7;
-	case 12: fila = 9;
-	case 13: fila = 11;
-	case 14: fila = 13;
+	case 0: fila = 15;
+	case 1: fila = 13;
+	case 2: fila = 11;
+	case 3: fila = 9;
+	case 4: fila = 7;
+	case 5: fila = 5;
+	case 6: fila = 3;
+	case 7: fila = 1;
+	case 8: fila = 14;
+	case 9: fila = 12;
+	case 10: fila = 10;
+	case 11: fila = 8;
+	case 12: fila = 6;
+	case 13: fila = 4;
+	case 14: fila = 2;
+	case 15: fila = 0;
 	default: break;
 	}
 	return columna * 16 + fila;

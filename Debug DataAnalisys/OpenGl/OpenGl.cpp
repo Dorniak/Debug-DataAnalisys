@@ -32,7 +32,7 @@ int window_width = 750;
 int window_height = 750;
 
 //  variable representing the window title
-char *window_title = "Sample OpenGL FreeGlut App";
+char *window_title = "Visor";
 
 
 void OpenGl::Informar(String ^ Entrada)
