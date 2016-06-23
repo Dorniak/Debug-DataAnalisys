@@ -11,9 +11,7 @@ public:
 	//Constructor
 	DataAnalisys(List<Punto3D^>^ puntosController, List<Obstaculo^>^ ObstaculosController, cli::array<Object^>^ ParamAnalisys, List<int>^ Conclusiones, cli::array<bool>^ Flags, cli::array<Thread^>^ Threads, OpenGl^ Dibujador);
 	//Funcion de thread
-	void AnalisysThread();
 	void AnalisysThread2();
-	void Esperar();
 	void Esperar2();
 	//Funcion para abortar el thread
 	void Kill();

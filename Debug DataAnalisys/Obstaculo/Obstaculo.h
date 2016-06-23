@@ -45,12 +45,26 @@ public:
 	void calculatePrediceCenter();//Calcula el centro predicho a partir de la velocidad del coche y el vector de direccion
 	void calculateTimeToCollision(double vel);//Calcula el tiempo de colision del obstaculo con el coche
 	void prepareObstacle();
+	Punto3D ^ Corte(double A1, double B1, double C1, double A2, double B2, double C2);
 	List<Punto3D^>^ components;
 #pragma endregion
+
+
+	Punto3D^ Punto1;
+	Punto3D^ Punto2;
+	Punto3D^ Punto3;
+	Punto3D^ Punto4;
+	Punto3D^ Punto5;
+	Punto3D^ Punto6;
+	Punto3D^ Punto7;
+	Punto3D^ Punto8;
+
 
 private:
 
 #pragma region Propieties
+
+	
 
 	Punto3D^ North;
 	Punto3D^ South;

@@ -114,16 +114,6 @@ void DataAnalisys::AnalisysThread2()
 	Esperar2();
 }
 
-void DataAnalisys::Esperar()
-{
-	Informar("ESTOY EN ESPERA");
-	while (Flags[FLAG_WARNING] || Flags[FLAG_PAUSA]) {
-		//	if (Flags[FLAG_WARNING])
-		//		Kill();
-		Sleep(200);
-	}
-	AnalisysThread();
-}
 
 void DataAnalisys::Esperar2()
 {
@@ -424,27 +414,28 @@ bool DataAnalisys::puntosCercanosD(Punto3D^ p1, Punto3D^ p2)
 
 int DataAnalisys::convaPos(int columna, int fila) 
 {
+	int f;
 	switch (fila)
 	{
-	case 0: fila = 15;
-	case 1: fila = 13;
-	case 2: fila = 11;
-	case 3: fila = 9;
-	case 4: fila = 7;
-	case 5: fila = 5;
-	case 6: fila = 3;
-	case 7: fila = 1;
-	case 8: fila = 14;
-	case 9: fila = 12;
-	case 10: fila = 10;
-	case 11: fila = 8;
-	case 12: fila = 6;
-	case 13: fila = 4;
-	case 14: fila = 2;
-	case 15: fila = 0;
-	default: break;
+	case 0: f = 15; break;
+	case 1: f = 13; break;
+	case 2: f = 11; break;
+	case 3: f = 9; break;
+	case 4: f = 7; break;
+	case 5: f = 5; break;
+	case 6: f = 3; break;
+	case 7: f = 1; break;
+	case 8: f = 14; break;
+	case 9: f = 12; break;
+	case 10: f = 10; break;
+	case 11: f = 8; break;
+	case 12: f = 6; break;
+	case 13: f = 4; break;
+	case 14: f = 2; break;
+	case 15: f = 0; break;
+	default: -1;
 	}
-	return columna * 16 + fila;
+	return columna * 16 + f;
 }
 
 void DataAnalisys::MoverObstaculo(int Obst1, int Obst2)

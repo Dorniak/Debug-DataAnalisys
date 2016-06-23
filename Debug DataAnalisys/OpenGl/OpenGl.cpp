@@ -90,45 +90,61 @@ void OpenGl::modificarPuntos(List<Punto3D^>^ listEntradaPuntos)
 }
 void OpenGl::modificarObstaculos(List<Obstaculo^>^ listEntradaObstaculos)
 {
+	
 	////Prueba
-	//
-	////Punto de arriba 1
-	//obstaculos[0]->setCoordinatesY(1);//y2
-	//obstaculos[0]->setCoordinatesX(-1);//x2
-	//obstaculos[0]->setCoordinatesZ(-1);//z1
-	//																												//Punto de arriba 2
-	//obstaculos[0 + 1]->setCoordinatesY(1);//y2
-	//obstaculos[0 + 1]->setCoordinatesX(-1);//x1
-	//obstaculos[0 + 1]->setCoordinatesZ(1);//z1
-	//																													//Punto de arriba 3
-	//obstaculos[0 + 2]->setCoordinatesY(1);//y1
-	//obstaculos[0 + 2]->setCoordinatesX(1);//x1
-	//obstaculos[0 + 2]->setCoordinatesZ(1);//z1
-	//																													//Punto de arriba 4
-	//obstaculos[0 + 3]->setCoordinatesY(1);//y1
-	//obstaculos[0 + 3]->setCoordinatesX(1);//x2
-	//obstaculos[0 + 3]->setCoordinatesZ(-1);//z1
-	//																													//Punto de abajo 1
-	//obstaculos[0 + 4]->setCoordinatesY(-1);//y2
-	//obstaculos[0 + 4]->setCoordinatesX(-1);//x2
-	//obstaculos[0 + 4]->setCoordinatesZ(-1);//z2
-	//																													//Punto de abajo 2
-	//obstaculos[0 + 5]->setCoordinatesY(-1);//y2
-	//obstaculos[0 + 5]->setCoordinatesX(-1);//x1
-	//obstaculos[0 + 5]->setCoordinatesZ(1);//z2
-	//																													//Punto de abajo 3
-	//obstaculos[0 + 6]->setCoordinatesY(-1);//y1
-	//obstaculos[0 + 6]->setCoordinatesX(1);//x1
-	//obstaculos[0 + 6]->setCoordinatesZ(1);//z2
-	//																													//Punto de abajo 4
-	//obstaculos[0 + 7]->setCoordinatesY(-1);//y1
-	//obstaculos[0 + 7]->setCoordinatesX(1);//x2
-	//obstaculos[0 + 7]->setCoordinatesZ(-1);//z2
-	
-	
-	
-	
-	
+	//for (int recorridoO = 0; recorridoO < listEntradaObstaculos->Count; recorridoO++) {
+	//	if (recorridoO == NUM_OBSTACULOS)
+	//	{
+	//		break;
+	//	}
+	//	// 2*---------*3
+	//	//	|		  |
+	//	//	|		  |
+	//	// 1*---------*4
+	//	//Punto de arriba 1
+	//	obstaculos[(9 * recorridoO)]->setCoordinatesY(listEntradaObstaculos[recorridoO]->Punto1->getCoordinatesY());//y2
+	//	obstaculos[(9 * recorridoO)]->setCoordinatesX(listEntradaObstaculos[recorridoO]->Punto1->getCoordinatesX());//x2
+	//	obstaculos[(9 * recorridoO)]->setCoordinatesZ(-listEntradaObstaculos[recorridoO]->Punto1->getCoordinatesZ());//z1
+	//																													 //Punto de arriba 2
+	//	obstaculos[(9 * recorridoO) + 1]->setCoordinatesY(listEntradaObstaculos[recorridoO]->Punto2->getCoordinatesY());//y2
+	//	obstaculos[(9 * recorridoO) + 1]->setCoordinatesX(listEntradaObstaculos[recorridoO]->Punto2->getCoordinatesX());//x1
+	//	obstaculos[(9 * recorridoO) + 1]->setCoordinatesZ(-listEntradaObstaculos[recorridoO]->Punto2->getCoordinatesZ());//z1
+	//																														 //Punto de arriba 3
+	//	obstaculos[(9 * recorridoO) + 2]->setCoordinatesY(listEntradaObstaculos[recorridoO]->Punto3->getCoordinatesY());//y1
+	//	obstaculos[(9 * recorridoO) + 2]->setCoordinatesX(listEntradaObstaculos[recorridoO]->Punto3->getCoordinatesX());//x1
+	//	obstaculos[(9 * recorridoO) + 2]->setCoordinatesZ(-listEntradaObstaculos[recorridoO]->Punto3->getCoordinatesZ());//z1
+	//																														 //Punto de arriba 4
+	//	obstaculos[(9 * recorridoO) + 3]->setCoordinatesY(listEntradaObstaculos[recorridoO]->Punto4->getCoordinatesY());//y1
+	//	obstaculos[(9 * recorridoO) + 3]->setCoordinatesX(listEntradaObstaculos[recorridoO]->Punto4->getCoordinatesX());//x2
+	//	obstaculos[(9 * recorridoO) + 3]->setCoordinatesZ(-listEntradaObstaculos[recorridoO]->Punto4->getCoordinatesZ());//z1
+	//																														 //Punto de abajo 1
+	//	obstaculos[(9 * recorridoO) + 4]->setCoordinatesY(listEntradaObstaculos[recorridoO]->Punto5->getCoordinatesY());//y2
+	//	obstaculos[(9 * recorridoO) + 4]->setCoordinatesX(listEntradaObstaculos[recorridoO]->Punto5->getCoordinatesX());//x2
+	//	obstaculos[(9 * recorridoO) + 4]->setCoordinatesZ(-listEntradaObstaculos[recorridoO]->Punto5->getCoordinatesZ());//z2
+	//																														 //Punto de abajo 2
+	//	obstaculos[(9 * recorridoO) + 5]->setCoordinatesY(listEntradaObstaculos[recorridoO]->Punto6->getCoordinatesY());//y2
+	//	obstaculos[(9 * recorridoO) + 5]->setCoordinatesX(listEntradaObstaculos[recorridoO]->Punto6->getCoordinatesX());//x1
+	//	obstaculos[(9 * recorridoO) + 5]->setCoordinatesZ(-listEntradaObstaculos[recorridoO]->Punto6->getCoordinatesZ());//z2
+	//																														 //Punto de abajo 3
+	//	obstaculos[(9 * recorridoO) + 6]->setCoordinatesY(listEntradaObstaculos[recorridoO]->Punto7->getCoordinatesY());//y1
+	//	obstaculos[(9 * recorridoO) + 6]->setCoordinatesX(listEntradaObstaculos[recorridoO]->Punto7->getCoordinatesX());//x1
+	//	obstaculos[(9 * recorridoO) + 6]->setCoordinatesZ(-listEntradaObstaculos[recorridoO]->Punto7->getCoordinatesZ());//z2
+	//																														 //Punto de abajo 4
+	//	obstaculos[(9 * recorridoO) + 7]->setCoordinatesY(listEntradaObstaculos[recorridoO]->Punto8->getCoordinatesY());//y1
+	//	obstaculos[(9 * recorridoO) + 7]->setCoordinatesX(listEntradaObstaculos[recorridoO]->Punto8->getCoordinatesX());//x2
+	//	obstaculos[(9 * recorridoO) + 7]->setCoordinatesZ(-listEntradaObstaculos[recorridoO]->Punto8->getCoordinatesZ());//z2
+
+	//																														 //Centro
+	//	obstaculos[(9 * recorridoO) + 8]->setCoordinatesY(listEntradaObstaculos[recorridoO]->getCenter()->getCoordinatesY());//y1
+	//	obstaculos[(9 * recorridoO) + 8]->setCoordinatesX(listEntradaObstaculos[recorridoO]->getCenter()->getCoordinatesX());//x2
+	//	obstaculos[(9 * recorridoO) + 8]->setCoordinatesZ(-listEntradaObstaculos[recorridoO]->getCenter()->getCoordinatesZ());//z2
+
+	//}
+
+
+
+
+
 	
 	for (int recorridoO = 0; recorridoO < listEntradaObstaculos->Count; recorridoO++) {
 		if (recorridoO == NUM_OBSTACULOS)
