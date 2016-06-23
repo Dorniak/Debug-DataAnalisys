@@ -1,8 +1,23 @@
-﻿  OpenGl.cpp
+﻿  DataAnalisys.cpp
+DataAnalisys\DataAnalisys.cpp(99): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+DataAnalisys\DataAnalisys.cpp(100): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+DataAnalisys\DataAnalisys.cpp(347): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+  Interfaz.cpp
+  Main.cpp
+Main.cpp(34): warning C4101: 'sr': unreferenced local variable
+Main.cpp(77): warning C4101: 'f': unreferenced local variable
+Main.cpp(32): warning C4101: 'entrada': unreferenced local variable
+Main.cpp(33): warning C4101: 'path': unreferenced local variable
+  OpenGl.cpp
 OpenGl\OpenGl.cpp(72): warning C4101: 'e': unreferenced local variable
 OpenGl\OpenGl.cpp(495): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
 OpenGl\OpenGl.cpp(498): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
 OpenGl\OpenGl.cpp(502): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+  reader.cpp
+Reader\reader.cpp(21): warning C4101: 'e': unreferenced local variable
+Reader\reader.cpp(71): warning C4101: 'a': unreferenced local variable
+Reader\reader.cpp(80): warning C4101: 'a': unreferenced local variable
+  Generating Code...
 d:\documentos\github\debug dataanalisys\debug dataanalisys\opengl\opengl.cpp(50): warning C4700: uninitialized local variable 'argv' used
   DataAnalisys.obj : /DEBUG:FASTLINK is not supported when managed code is present; restarting link with /DEBUG:FULL
   Debug DataAnalisys.vcxproj -> D:\Documentos\GitHub\Debug DataAnalisys\Debug\Debug DataAnalisys.exe
