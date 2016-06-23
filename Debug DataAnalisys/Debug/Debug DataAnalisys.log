@@ -4,7 +4,7 @@ DataAnalisys\DataAnalisys.cpp(94): warning C4244: 'argument': conversion from 'd
 DataAnalisys\DataAnalisys.cpp(98): warning C4101: 'e': unreferenced local variable
 DataAnalisys\DataAnalisys.cpp(172): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
 DataAnalisys\DataAnalisys.cpp(173): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-DataAnalisys\DataAnalisys.cpp(428): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+DataAnalisys\DataAnalisys.cpp(430): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
   Interfaz.cpp
   Main.cpp
 Main.cpp(34): warning C4101: 'sr': unreferenced local variable

@@ -229,9 +229,11 @@ void DataAnalisys::copiarObstaculos()
 		//mensaje pantalla
 	}
 	Flags[FLAG_TRATAMIENTO] = true;
+	
 
 	ObstaculosvAnt->Clear();
 	ObstaculosvAnt->AddRange(Obstaculos);
+
 	Informar("Numero de obstaculos a copiar: " + ObstaculosvAnt->Count);
 	if (Flags[FLAG_OPENGL]) {
 		Informar("Obstaculos->OpenGl");
@@ -255,7 +257,7 @@ void DataAnalisys::Segmentacion(List<Punto3D^>^ matrix, double apertura)
 		{
 
 			//Se comprubea si el punto a tratar Existe
-			if (matrix[convaPos(columna, fila)]->valido && matrix[convaPos(columna, fila)]->getAzimuth()>(180 - apertura) && matrix[convaPos(columna, fila)]->getAzimuth() < (180 + apertura))
+			if (matrix[convaPos(columna, fila)]->valido && (matrix[convaPos(columna, fila)]->getAzimuth()>(180 - apertura)) && (matrix[convaPos(columna, fila)]->getAzimuth() < (180 + apertura)))
 			{
 				ResetParametros();
 				//En caso de que sea el primer punto se asigna directamente al obstaculo 0
@@ -449,12 +451,14 @@ void DataAnalisys::relacionarPos(int i, int j, int VelC, int Res)
 //TODO::Modificar en el original
 bool DataAnalisys::comprobarBloqueo(List<Punto3D^>^ matriz)
 {
+
 	//Devuelve true cuando hay bloqueo
 	int medio = (matriz->Count / 16) / 2;
 	Punto3D^ prueba;
+
 	for (int k = medio - 30; k < medio + 30; k++) {
 		for (int i = 0; i < NUMERO_FILAS; i++) {
-			if (matriz[convaPos(k, i)]->valido && matriz[convaPos(k, i)]->getDistance() < 15 && matriz[convaPos(k, i)]->getCoordinatesZ() > -10) {//Altura mayor k 0.2
+			if (matriz[convaPos(k, i)]->valido && matriz[convaPos(k, i)]->getDistance() < 15 && matriz[convaPos(k, i)]->getCoordinatesZ() > 5) {//Altura de bloquepmayor k 0.2
 				prueba = matriz[convaPos(k, i)];
 				return true;
 			}
@@ -473,11 +477,11 @@ bool DataAnalisys::puntosCercanosH(Punto3D^ p1, Punto3D^ p2)
 
 bool DataAnalisys::puntosCercanosV(Punto3D^ p1, Punto3D^ p2)
 {
-	double toleranciaV = p1->getDistance() * tan(resolutionV  * PI / 180);
+	/*double toleranciaV = p1->getDistance() * tan(resolutionV  * PI / 180);
 	double toleranciaH = p1->getDistance() * tan(((resolutionH - (2 * 20 * 0.00001843 * 180)) / 16)  * PI / 180);
 	Punto3D ^ a = gcnew Punto3D(toleranciaH, toleranciaV, 0);
-	double tolerancia = a->getModule();
-	//double tolerancia = p1->getDistance() * tan(resolutionV  * PI / 180);
+	double tolerancia = a->getModule();*/
+	double tolerancia = p1->getDistance() * tan(resolutionV  * PI / 180);
 	tolerancia = tolerancia * ((100 + VERTICAL_TOLERANCE) / 100);
 	return(tolerancia > p1->distanceToPoint(p2));
 }

@@ -191,6 +191,7 @@ void DataReader::copiarPuntos()
 		Flags[FLAG_WARNING] = true;
 		//mensaje pantalla
 	}
+	Flags[FLAG_ANALIZAR] = true;
 	Flags[FLAG_TRATAMIENTO] = false;
 	Puntos->Clear();
 }
