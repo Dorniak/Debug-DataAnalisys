@@ -24,6 +24,14 @@ public:
 	Punto3D^ getWest();
 	Punto3D^ getCloser();
 	Punto3D^ getFarthest();
+	Punto3D^ getPunto1();
+	Punto3D^ getPunto2();
+	Punto3D^ getPunto3();
+	Punto3D^ getPunto4();
+	Punto3D^ getPunto5();
+	Punto3D^ getPunto6();
+	Punto3D^ getPunto7();
+	Punto3D^ getPunto8();
 	double getVelocity();//Devuelve a la velocidad a la que va el obstaculo
 
 #pragma endregion
@@ -45,7 +53,7 @@ public:
 	void calculatePrediceCenter();//Calcula el centro predicho a partir de la velocidad del coche y el vector de direccion
 	void calculateTimeToCollision(double vel);//Calcula el tiempo de colision del obstaculo con el coche
 	void prepareObstacle();
-	Punto3D ^ Corte(double A1, double B1, double C1, double A2, double B2, double C2);
+	
 	List<Punto3D^>^ components;
 #pragma endregion
 
@@ -65,7 +73,7 @@ private:
 #pragma region Propieties
 
 	
-
+	Punto3D ^ Corte(double A1, double B1, double C1, double A2, double B2, double C2);
 	Punto3D^ North;
 	Punto3D^ South;
 	Punto3D^ East;

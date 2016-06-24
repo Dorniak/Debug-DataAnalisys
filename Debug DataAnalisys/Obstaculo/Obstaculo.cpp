@@ -73,6 +73,38 @@ Punto3D ^ Obstaculo::getFarthest()
 	return Farthest;
 	// TODO: insert return statement here
 }
+Punto3D ^ Obstaculo::getPunto1()
+{
+	return Punto1;
+}
+Punto3D ^ Obstaculo::getPunto2()
+{
+	return Punto2;
+}
+Punto3D ^ Obstaculo::getPunto3()
+{
+	return Punto3;
+}
+Punto3D ^ Obstaculo::getPunto4()
+{
+	return Punto4;
+}
+Punto3D ^ Obstaculo::getPunto5()
+{
+	return Punto5;
+}
+Punto3D ^ Obstaculo::getPunto6()
+{
+	return Punto6;
+}
+Punto3D ^ Obstaculo::getPunto7()
+{
+	return Punto7;
+}
+Punto3D ^ Obstaculo::getPunto8()
+{
+	return Punto8;
+}
 /// <summary>
 /// Gets the velocity.
 /// </summary>

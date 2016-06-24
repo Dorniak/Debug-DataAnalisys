@@ -186,7 +186,7 @@ double Punto3D::getCoordinatesZ() {
 /// </summary>
 /// <returns></returns>
 double Punto3D::getDistance() {
-	return Distance;
+	return this->Distance;
 }
 /// <summary>
 /// Gets the intensity.
