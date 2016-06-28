@@ -1,5 +1,5 @@
 #pragma once
-#include "Punto3D.h"
+#include "../Punto3D/Punto3D.h"
 #include <limits.h>
 
 using namespace std;
@@ -24,14 +24,14 @@ public:
 	Punto3D^ getWest();
 	Punto3D^ getCloser();
 	Punto3D^ getFarthest();
-	Punto3D^ getPunto1();
+	/*Punto3D^ getPunto1();
 	Punto3D^ getPunto2();
 	Punto3D^ getPunto3();
 	Punto3D^ getPunto4();
 	Punto3D^ getPunto5();
 	Punto3D^ getPunto6();
 	Punto3D^ getPunto7();
-	Punto3D^ getPunto8();
+	Punto3D^ getPunto8();*/
 	double getVelocity();//Devuelve a la velocidad a la que va el obstaculo
 
 #pragma endregion
@@ -53,11 +53,11 @@ public:
 	void calculatePrediceCenter();//Calcula el centro predicho a partir de la velocidad del coche y el vector de direccion
 	void calculateTimeToCollision(double vel);//Calcula el tiempo de colision del obstaculo con el coche
 	void prepareObstacle();
-	
 	List<Punto3D^>^ components;
 #pragma endregion
 
-
+private:
+	/*Punto3D ^ Corte(double A1, double B1, double C1, double A2, double B2, double C2);
 	Punto3D^ Punto1;
 	Punto3D^ Punto2;
 	Punto3D^ Punto3;
@@ -65,15 +65,10 @@ public:
 	Punto3D^ Punto5;
 	Punto3D^ Punto6;
 	Punto3D^ Punto7;
-	Punto3D^ Punto8;
-
-
-private:
+	Punto3D^ Punto8;*/
 
 #pragma region Propieties
 
-	
-	Punto3D ^ Corte(double A1, double B1, double C1, double A2, double B2, double C2);
 	Punto3D^ North;
 	Punto3D^ South;
 	Punto3D^ East;

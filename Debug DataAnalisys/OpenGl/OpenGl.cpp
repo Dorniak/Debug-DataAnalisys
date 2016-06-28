@@ -8,7 +8,7 @@ using namespace System::Collections::Generic;
 // ----------------------------------------------------------
 void init();
 void display(void);
-void keyboard(unsigned char, int , int );
+void keyboard(unsigned char, int, int);
 void centerOnScreen();
 void trabajo();
 void specialKeys(int key, int x, int y);
@@ -90,7 +90,7 @@ void OpenGl::modificarPuntos(List<Punto3D^>^ listEntradaPuntos)
 }
 void OpenGl::modificarObstaculos(List<Obstaculo^>^ listEntradaObstaculos)
 {
-
+	limpiarListas();
 	////Prueba
 	//for (int recorridoO = 0; recorridoO < listEntradaObstaculos->Count; recorridoO++) {
 	//	if (recorridoO == NUM_OBSTACULOS)
@@ -141,11 +141,6 @@ void OpenGl::modificarObstaculos(List<Obstaculo^>^ listEntradaObstaculos)
 
 	//}
 
-
-
-
-
-
 	for (int recorridoO = 0; recorridoO < listEntradaObstaculos->Count; recorridoO++) {
 		if (recorridoO == NUM_OBSTACULOS)
 		{
@@ -159,36 +154,36 @@ void OpenGl::modificarObstaculos(List<Obstaculo^>^ listEntradaObstaculos)
 		obstaculos[(9 * recorridoO)]->setCoordinatesX(listEntradaObstaculos[recorridoO]->getWest()->getCoordinatesX());//x2
 		obstaculos[(9 * recorridoO)]->setCoordinatesY(listEntradaObstaculos[recorridoO]->getCloser()->getCoordinatesY());//y2
 		obstaculos[(9 * recorridoO)]->setCoordinatesZ(-listEntradaObstaculos[recorridoO]->getNorth()->getCoordinatesZ());//z1
-		//Punto de arriba 2
+																														 //Punto de arriba 2
 		obstaculos[(9 * recorridoO) + 1]->setCoordinatesX(listEntradaObstaculos[recorridoO]->getEast()->getCoordinatesX());//x1
 		obstaculos[(9 * recorridoO) + 1]->setCoordinatesY(listEntradaObstaculos[recorridoO]->getCloser()->getCoordinatesY());//y2
 		obstaculos[(9 * recorridoO) + 1]->setCoordinatesZ(-listEntradaObstaculos[recorridoO]->getNorth()->getCoordinatesZ());//z1
-		//Punto de arriba 3
+																															 //Punto de arriba 3
 		obstaculos[(9 * recorridoO) + 2]->setCoordinatesX(listEntradaObstaculos[recorridoO]->getEast()->getCoordinatesX());//x1
 		obstaculos[(9 * recorridoO) + 2]->setCoordinatesY(listEntradaObstaculos[recorridoO]->getFarthest()->getCoordinatesY());//y1
 		obstaculos[(9 * recorridoO) + 2]->setCoordinatesZ(-listEntradaObstaculos[recorridoO]->getNorth()->getCoordinatesZ());//z1
-		//Punto de arriba 4
+																															 //Punto de arriba 4
 		obstaculos[(9 * recorridoO) + 3]->setCoordinatesX(listEntradaObstaculos[recorridoO]->getWest()->getCoordinatesX());//x2
 		obstaculos[(9 * recorridoO) + 3]->setCoordinatesY(listEntradaObstaculos[recorridoO]->getFarthest()->getCoordinatesY());//y1
 		obstaculos[(9 * recorridoO) + 3]->setCoordinatesZ(-listEntradaObstaculos[recorridoO]->getNorth()->getCoordinatesZ());//z1
-		//Punto de abajo 1
+																															 //Punto de abajo 1
 		obstaculos[(9 * recorridoO) + 4]->setCoordinatesX(listEntradaObstaculos[recorridoO]->getWest()->getCoordinatesX());//x2
 		obstaculos[(9 * recorridoO) + 4]->setCoordinatesY(listEntradaObstaculos[recorridoO]->getCloser()->getCoordinatesY());//y2
 		obstaculos[(9 * recorridoO) + 4]->setCoordinatesZ(-listEntradaObstaculos[recorridoO]->getSouth()->getCoordinatesZ());//z2
-		//Punto de abajo 2
+																															 //Punto de abajo 2
 		obstaculos[(9 * recorridoO) + 5]->setCoordinatesX(listEntradaObstaculos[recorridoO]->getEast()->getCoordinatesX());//x1
 		obstaculos[(9 * recorridoO) + 5]->setCoordinatesY(listEntradaObstaculos[recorridoO]->getCloser()->getCoordinatesY());//y2
 		obstaculos[(9 * recorridoO) + 5]->setCoordinatesZ(-listEntradaObstaculos[recorridoO]->getSouth()->getCoordinatesZ());//z2
-		//Punto de abajo 3
+																															 //Punto de abajo 3
 		obstaculos[(9 * recorridoO) + 6]->setCoordinatesX(listEntradaObstaculos[recorridoO]->getEast()->getCoordinatesX());//x1
 		obstaculos[(9 * recorridoO) + 6]->setCoordinatesY(listEntradaObstaculos[recorridoO]->getFarthest()->getCoordinatesY());//y1
 		obstaculos[(9 * recorridoO) + 6]->setCoordinatesZ(-listEntradaObstaculos[recorridoO]->getSouth()->getCoordinatesZ());//z2
-		//Punto de abajo 4
+																															 //Punto de abajo 4
 		obstaculos[(9 * recorridoO) + 7]->setCoordinatesX(listEntradaObstaculos[recorridoO]->getWest()->getCoordinatesX());//x2
 		obstaculos[(9 * recorridoO) + 7]->setCoordinatesY(listEntradaObstaculos[recorridoO]->getFarthest()->getCoordinatesY());//y1
 		obstaculos[(9 * recorridoO) + 7]->setCoordinatesZ(-listEntradaObstaculos[recorridoO]->getSouth()->getCoordinatesZ());//z2
 
-		//Centro
+																															 //Centro
 		obstaculos[(9 * recorridoO) + 8]->setCoordinatesX(listEntradaObstaculos[recorridoO]->getCenter()->getCoordinatesX());//x2
 		obstaculos[(9 * recorridoO) + 8]->setCoordinatesY(listEntradaObstaculos[recorridoO]->getCenter()->getCoordinatesY());//y1
 		obstaculos[(9 * recorridoO) + 8]->setCoordinatesZ(-listEntradaObstaculos[recorridoO]->getCenter()->getCoordinatesZ());//z2
@@ -217,10 +212,14 @@ void OpenGl::limpiarListas(int a)
 		puntos[recorrerListaPuntos]->setCoordinatesY(0);
 		puntos[recorrerListaPuntos]->setCoordinatesZ(0);
 	}
+
+}
+void OpenGl::limpiarListas()
+{
 	for (int recorrerListaObstaculos = 0; recorrerListaObstaculos < obstaculos->Count; recorrerListaObstaculos++) {
 		/*if (obstaculos[recorrerListaObstaculos]->getCoordinatesX() == 0 && obstaculos[recorrerListaObstaculos]->getCoordinatesY() == 0 && obstaculos[recorrerListaObstaculos]->getCoordinatesZ() == 0)
 		{
-			break;
+		break;
 		}*/
 		obstaculos[recorrerListaObstaculos]->setCoordinatesX(0);
 		obstaculos[recorrerListaObstaculos]->setCoordinatesY(0);
@@ -235,11 +234,7 @@ void trabajo()
 	glutInitWindowPosition(window_x, window_y);
 	glutInitDisplayMode(GLUT_RGBA | GLUT_DOUBLE);
 	glutCreateWindow(window_title);
-
-	//  Set OpenGL program initial state.
 	init();
-	// Set the callback functions
-	//glutDisplayFunc(display);
 	glutKeyboardFunc(keyboard);
 	glutSpecialFunc(specialKeys);
 	glutTimerFunc(2000, timerFunc, 0);
@@ -282,7 +277,7 @@ void display() {
 #pragma endregion
 	glColor3f(1.0f, 1.0f, 1.0f);      // activamos el color blanco
 #pragma region Circunferencias
-	//Dibuja circunferencia 3m de diametro
+									  //Dibuja circunferencia 3m de diametro
 	glBegin(GL_LINE_STRIP);
 	glColor3f(1.0f, 0.0f, 0.0f);      // activamos el color rojo
 	for (int i = 0; i < 360; i++) {
@@ -347,7 +342,7 @@ void display() {
 #pragma endregion
 #pragma region Vehiculo
 	glColor3f(1.0f, 1.0f, 1.0f);      // activamos el color blanco
-	//Vehiculo
+									  //Vehiculo
 	glBegin(GL_LINE_STRIP);
 	glVertex3d(1, 2, 0);
 	glVertex3d(1, -2, 0);
@@ -361,9 +356,9 @@ void display() {
 #pragma region Dibujarpuntos
 
 	glColor3f(1.0f, 1.0f, 1.0f);      // activamos el color blanco
-	//-------------------------------------------------------------------------
-	//  Mete en el buffer la lista de puntos
-	//-------------------------------------------------------------------------
+									  //-------------------------------------------------------------------------
+									  //  Mete en el buffer la lista de puntos
+									  //-------------------------------------------------------------------------
 	glPointSize(2);
 	glBegin(GL_POINTS);
 	glColor3f(0.8f, 0.6f, 1.0f);  // activamos el color rojo claro
@@ -450,14 +445,14 @@ void centerOnScreen()
 }
 void keyboard(unsigned char key, int x, int y) {
 	switch (key) {
-	/*case 'p':
-	case 'P':
+		/*case 'p':
+		case 'P':
 		hazPerspectiva = 1;
 		reshape(ancho, alto);
 		break;
 
-	case 'o':
-	case 'O':
+		case 'o':
+		case 'O':
 		hazPerspectiva = 0;
 		reshape(ancho, alto);
 		break;*/
@@ -474,7 +469,7 @@ void keyboard(unsigned char key, int x, int y) {
 		glRotatef(1.0, 0., 0., -1.);
 		break;
 	case '7':
-		glScalef(0.5,0.5,0.5);
+		glScalef(0.5, 0.5, 0.5);
 		break;
 	case '8':
 		glScalef(2, 2, 2);

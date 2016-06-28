@@ -88,7 +88,7 @@ private:
 	int convaPos(int columna, int fila);
 	//LIsta en la que se guardan los puntos de esta vuelta
 	List<Punto3D^>^ matriz;
-	List<Punto3D^>^ matriz2;
+	List<Punto3D^>^ matriz_pointer;
 	//Objeto thread del analisys
 	Thread^ thread_analysis;
 	void MoverObstaculo(int Obst1, int Obst2);
