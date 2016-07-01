@@ -4,7 +4,7 @@
 #include <stdio.h>
 #include "../Punto3D/Punto3D.h"
 #include "../Obstaculo/Obstaculo.h"
-#include "../Flags/Parametros.h"
+#include "../Parametros/Parametros.h"
 ref class OpenGl {
 public:
 	OpenGl(cli::array<Thread^>^ Threads);

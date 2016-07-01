@@ -1,10 +1,10 @@
 #pragma once
-#include "Obstaculo.h"
+#include "../Obstaculo/Obstaculo.h"
 #include <math.h>
-#include "OpenGl.h"
+#include "../OpenGl/OpenGl.h"
 #include <timeApi.h>
 #include <stdlib.h>
-#include "Parametros.h"
+#include "../Parametros/Parametros.h"
 
 ref class DataAnalisys {
 public:

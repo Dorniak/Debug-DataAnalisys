@@ -1,9 +1,9 @@
 #pragma once
 #include <stdio.h>
 #include <iostream>
-#include "DataAnalisys.h"
+#include "DataAnalisys\DataAnalisys.h"
 #include "Reader\reader.h"
-#include "OpenGl.h"
+#include "OpenGl\OpenGl.h"
 #include <locale.h>
 #include <string.h>
 using namespace std;

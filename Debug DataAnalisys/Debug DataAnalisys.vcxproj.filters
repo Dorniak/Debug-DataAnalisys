@@ -24,9 +24,6 @@
     <ClCompile Include="OpenGl\OpenGl.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Reader\reader.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
